@@ -1,0 +1,6 @@
+{
+  "name": "ResumeAI",
+  "description": "An AI-powered ATS resume builder that writes and optimizes resumes using Gemini 3.5 with Frosted Glass styling.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

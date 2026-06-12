@@ -1,0 +1,55 @@
+{
+  "entities": {
+    "Resume": {
+      "title": "Resume Document",
+      "description": "Represents an individual ATS-optimized resume",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "templateId": { "type": "string" },
+        "personalInfo": { "type": "object" },
+        "summary": { "type": "string" },
+        "education": { "type": "array" },
+        "skills": { "type": "array" },
+        "experience": { "type": "array" },
+        "projects": { "type": "array" },
+        "certifications": { "type": "array" },
+        "languages": { "type": "array" },
+        "atsScore": { "type": "integer" },
+        "atsSuggestions": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "isPremium": { "type": "boolean" }
+      },
+      "required": ["id", "userId", "title"]
+    },
+    "CoverLetter": {
+      "title": "Cover Letter Document",
+      "description": "Represents a generated cover letter draft",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "jobTitle": { "type": "string" },
+        "companyName": { "type": "string" },
+        "content": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "title", "content"]
+    }
+  },
+  "firestore": {
+    "resumes/{resumeId}": {
+      "schema": "Resume",
+      "description": "User created resume drafts"
+    },
+    "coverLetters/{letterId}": {
+      "schema": "CoverLetter",
+      "description": "AI-generated user cover letters"
+    }
+  }
+}
